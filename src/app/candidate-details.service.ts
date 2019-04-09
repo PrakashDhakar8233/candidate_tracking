@@ -56,10 +56,10 @@ export class CandidateDetailsService {
  const notificationData: Notifiy={logedInuser: this.logedInuser,skills: this.skills,targets: this.targets}
  return this.http.post<Notifiy>("http://localhost:3000/api/notifications",notificationData)
   }
-  // getNotification(){
-  //   return this.http.get<Notifiy>("http://localhost:3000/api/notifications")
+  getNotification(){
+    return this.http.get("http://localhost:3000/api/notifications")
   //  .subscribe(res=>{
-  //    console.log(res)
+  //    console.log(res,'kk')
   //  })
-  // }
+  }
 }

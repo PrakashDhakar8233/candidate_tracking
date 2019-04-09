@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
- <div class="container-fluid row bg-light mt-5">
+ <!-- <div class="container-fluid row bg-light mt-5">
     <h3>USER</h3>
   <div class="col-md-6 text-center" >
       
@@ -10,10 +10,24 @@
     <h4>SKILLS</h4>
     <h5>{{skills}}</h5>
   </div>
+ </div> -->
+ <div *ngFor="let data of recivedNotifi"
+ (click)="onSelect(i)" [ngClass] = "{'td' : select==i}"
+  >
+   <div class="row ml-5 mt-5">
+     <div class="col">
+   <span>Skills:- {{data.skills}}</span>
+
+     </div>
+     <div class="col">
+   <span>Sender:- {{data.logedInuser}}</span>
+
+     </div>
+
+   </div>
+
  </div>
  <!-- <button (click)="getNoty()" >le noty</button> -->
 
 
 
-
- <!-- (click)="onSelect(i)" [ngClass] = "{'td' : select}" -->

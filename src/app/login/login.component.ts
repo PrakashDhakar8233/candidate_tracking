@@ -11,8 +11,8 @@ import { Router } from '@angular/router'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  userValidate: boolean
-  errorMessage:string
+  userValidate: boolean = false
+  errorMessage:string 
 users:User[] = [
   {email:"admin@test.com", password:"admin"},
   {email:"admin1@test.com", password:"admin1"},
@@ -26,13 +26,13 @@ users:User[] = [
 this.users.forEach(element => {
   if(form.value.email==element.email){
     if(form.value.password==element.password){
-      this.userValidate = true
-
+      this.userValidate = true;
+      console.log("sjdksjdksj")
+      this.router.navigate(['/dashboard'])
     }else{this.errorMessage = "password is incorrect" }
   }else{ this.errorMessage = "id is incorrect"}
 });  
 this.candidateService.userID = (form.value.email)
-this.router.navigate(['/dashboard'])
   }
   ngOnInit() {
   }

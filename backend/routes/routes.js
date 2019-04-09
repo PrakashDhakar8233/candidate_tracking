@@ -21,5 +21,13 @@ router.post("", (req,res,next)=>{
   });
   
 });
+router.get("",(req,res,next)=>{
+  Notifications.find().then(data=>{
+    console.log(data,'ooo');
+    
+    res.status(200).json(data);
+
+  })
+})
 
 module.exports = router;

@@ -14,25 +14,33 @@ export class NotificationComponent implements OnInit {
  user:string
  skills:string
  target:string
- select:boolean = false
+ select:number
+ recivedNotifi:Notification[]=[];
   ngOnInit() {
     this.user = this.candidateService.userID
-   this.candidateService.sendNotification()
+   this.candidateService.getNotification()
    .subscribe(result=>{
      console.log(result);
+     for(var i=0;i<100;i++){
+      if(this.user==result[i].targets){
+        
+       this.recivedNotifi.push(result[i])
+
+      }
+     }
+     console.log(this.recivedNotifi,'haan')
      
-    if(this.user==result.targets){
-      this.skills = result.skills;
-      this.target = result.logedInuser;
-    }
+     
+
    })
     
   }
 
   onSelect(i){
-    this.select = true;
-    console.log(i,"skdlks")
+    this.select = i;
+    this.select = null;
   }
+
  
   
 
