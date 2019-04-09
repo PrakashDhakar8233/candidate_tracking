@@ -1,0 +1,105 @@
+
+<app-navbar></app-navbar>
+
+<div class="container align-items-center">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <fieldset>
+        
+        <!-- Form Name -->
+        <legend>Candidate Details</legend>
+        
+        <!-- Text input-->
+        <div class="row form-group">
+          <div class="col-md-2">
+            <label for="textinput">Candidate Name* </label>
+          </div>
+          <div class="col-md-6">
+          <input id="textinput" ngModel name="name"  type="text" placeholder="Your Name" required class="form-control input-md">
+          </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2">
+              <label for="textinput">Experience In Years </label>
+            </div>
+            <div class="col-md-6">
+            <input id="textinput" ngModel name="experience" type="text" placeholder="Your Experience" required class="form-control input-md">
+            </div>
+          </div>
+          <div class="row form-group">
+              <div class="col-md-2">
+                <label for="textinput">Preferred job location </label>
+              </div>
+              <div class="col-md-6">
+              <input id="textinput" ngModel name="location" type="text" placeholder="Job location" required class="form-control input-md">
+              </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-2">
+                  <label for="textinput">Date when the candidate can join</label>
+                </div>
+                <div class="col-md-6">
+                <input id="textinput" ngModel name="date" type="text" placeholder="DD/MM/YYYY" required class="form-control input-md">
+                </div>
+              </div>
+           
+            
+
+            <hr>
+            <div class="row">
+              <div class="col-md-2">
+              <label for="checkbox">Skills</label>
+              </div>
+              <div class="col-md-4">
+                  <p>
+                      <label [class.selected]="cb1.checked">
+                          <input #cb1 type="checkbox" value="Angular" (change)="logCheckbox(cb1)">Angular
+                      </label>
+                      <label [class.selected]="cb2.checked">
+                          <input #cb2 type="checkbox" value="JavaScript" (change)="logCheckbox(cb2)">JavaScript
+                      </label>
+                      <label [class.selected]="cb3.checked">
+                          <input #cb3 type="checkbox" value="Java" (change)="logCheckbox(cb3)">Java
+                      </label>
+                      <label [class.selected]="cb3.checked">
+                          <input #cb3 type="checkbox" value="Java" (change)="logCheckbox(cb3)">C++ 
+                      </label>
+                  </p>
+              </div>
+            </div>
+           
+      
+
+        
+        
+        <!-- Multiple Radios -->
+        <div class="row form-group">
+          <label class="col-md-2 control-label" for="radios">Sex</label>
+          <div class="col-md-4">
+          <div class="radio">
+            <label for="radios-0"></label>
+              <input type="radio" name="radios" id="radios-0" value="Male" [(ngModel)]= "radios" checked="checked">
+              Male
+            
+          </div>
+          <div class="radio">
+            <label for="radios-1">
+              <input type="radio" name="radios" id="radios-1" value="Femeal" [(ngModel)]= "radios">
+              Female
+            </label>
+          </div>
+          
+          </div>
+        </div>        
+        <div class="form-group">
+          <div class="col-md-4 ">
+              <button id="button1id" type="submit" name="button1id" class="btn btn-success mr-2"  >Submit
+                </button>
+          </div>
+          
+        </div>
+        
+        </fieldset>
+        </form>
+       
+</div>
+

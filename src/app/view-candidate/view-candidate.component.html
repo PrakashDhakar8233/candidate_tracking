@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+         
+          <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <table class="table" cellspacing="0">
+                      <thead>
+                          <tr>
+                              <th>Name</th>
+                              <th>Experience</th>
+                              <th>Location</th>
+                              <th>Gender</th>
+                              <th>Date</th>
+                              <th>Skills</th>
+
+                          </tr>
+                      </thead>
+                      <tbody *ngFor="let fetchedCandidate of fetchedCandidate">
+                          <tr>
+                              <td>{{fetchedCandidate.name}}</td>
+                              <td>{{fetchedCandidate.experience}} </td>
+                              <td>{{fetchedCandidate.location}} </td>
+                              <td>{{fetchedCandidate.radios}} </td>
+                              <td>{{fetchedCandidate.date}} </td>
+
+                              <td>
+                                    <div *ngFor="let skill of fetchedSkills">
+                                            <span>{{skill}},</span>
+          
+                                        </div>
+                              </td>
+                             
+                              
+
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

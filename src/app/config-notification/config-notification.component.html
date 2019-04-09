@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+    <div class="col-md-6 mx-auto mt-5">
+      <label>Select Skill</label>
+        <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="skills" (change)="onAddSkills()">
+          <option selected>Choose skills</option>
+          <option value="Angular">Angular</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Java">Java</option>
+          <option value="React">React</option>
+          <option value="Vuejs">Vuejs</option>
+
+        </select>
+      </div>
+      
+      <div class="col-md-6 mx-auto mt-3">
+        <label>Send notification to</label>
+        <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="target" (change)="onSendToTarget()">
+          <option selected>Choose user</option>
+          <option value="admin@test.com">admin</option>
+          <option value="admin1@test.com">admin1</option>
+          <option value="user@test.com">user</option>
+        </select>
+      </div>
+      <br>
+   <div class="row">
+     <div class="col-md-6 mx-auto">
+       <button class="btn btn-primary" (click)="sendNotification()" routerLink="/notification">See Notification</button>
+     </div>
+   </div>
+    
+      
+
+
+
+
+
